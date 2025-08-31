@@ -1,17 +1,20 @@
-const http = require('http');
+// HTTP Module
+const http = require('http');  
 
-const app = require('./app');
+// Express App
+const app = require('./app');   
 
-const connectDB = require('./db/db');
+// Initializing Socket
+const { initializeSocket } = require('./socket');
+const port = process.env.PORT || 3000;
 
-require('dotenv').config();
-
-const PORT = process.env.PORT || 3000;
-
-connectDB();
-
+// Creating an HTTP server using the Express app
 const server = http.createServer(app);
 
-server.listen(PORT, () => {
-  console.log(`Uber Backend running on http://localhost:${PORT}`);
+// Initialize Socket.IO and attach it to the HTTP server
+initializeSocket(server);
+
+// Start the server and listen on the defined port
+server.listen(port, () => {
+    console.log(`Uber Backend Server is running on port ${PORT}`);
 });
