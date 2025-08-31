@@ -16,5 +16,5 @@ initializeSocket(server);
 
 // Start the server and listen on the defined port
 server.listen(port, () => {
-    console.log(`Uber Backend Server is running on port ${PORT}`);
+    console.log(`Uber Backend Server is running on port ${port}`);
 });
