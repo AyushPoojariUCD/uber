@@ -1,5 +1,6 @@
 // Setup Express
 const express = require('express');
+const setupSwagger = require('./swagger');
 
 // Setup Dotenv
 const dotenv = require('dotenv');
@@ -30,9 +31,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+setupSwagger(app);
+
 // Route Setup
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Uber Backend is Running');
 });
 
 // Mounting Routes
