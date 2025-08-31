@@ -31,7 +31,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-setupSwagger(app);
 
 // Route Setup
 app.get('/', (req, res) => {
