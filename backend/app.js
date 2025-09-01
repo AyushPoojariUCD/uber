@@ -1,6 +1,5 @@
 // Setup Express
 const express = require('express');
-const setupSwagger = require('./swagger');
 
 // Setup Dotenv
 const dotenv = require('dotenv');
